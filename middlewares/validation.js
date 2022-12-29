@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 module.exports.authentication = function(req, res, next){
     try {
         console.log('In authentication middleware')
-        const nonSecurePaths = ['/', '/login', '/registerUser'];
+        const nonSecurePaths = ['/', '/login', '/registerUser', '/test'];
         if (nonSecurePaths.includes(req.path)) {
             console.log('Non Secure Paths');
             next()

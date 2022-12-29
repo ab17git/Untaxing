@@ -19,4 +19,6 @@ router.post('/login', authController.login)
 
 router.get('/home', homeController.getHomePageData)
 
+router.get('/test', homeController.test)
+
 module.exports = router;
