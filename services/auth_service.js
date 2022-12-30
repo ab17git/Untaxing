@@ -12,15 +12,19 @@ module.exports.createUser = async function (data) {
                 password = hash;
             });
             // password = await bcrypt.hash(data.password, saltRounds)
-            console.log(password)
+            console.log(data)
             let sql1 = "INSERT INTO users (name, gst_no, email, mob_no, password) VALUES(?, ?, ?, ?, ?)";
             let params = [data.name, data.gst_no, data.email, data.mob_no, password]
+            console.log(params)
 
             dbConnection.query(sql1, params, function (err, result) {
                 if (err) {
+                    console.log('here in error')
                     console.log(err.sqlMessage);
+                    console.log(err.message);
                     resolve(0);
                 } else {
+                    console.log(result)
                     if (result) {
                         // let user_id = result.insertId;
                         resolve(1)
