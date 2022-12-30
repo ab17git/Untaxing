@@ -1,4 +1,4 @@
-const dbConnection = require('../utilities/dbconnection');
+const dbConnection = require('./../utilities/dbconnection');
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
