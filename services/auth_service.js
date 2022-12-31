@@ -48,6 +48,9 @@ module.exports.login = async function (data) {
             let password = data.password;
             let user = await getUserByGstNo(gst_no);
             console.log(user)
+            if (!user){
+                resolve('gst not found')
+            }
             
             // compare password
             let passwordCheck = false
@@ -57,7 +60,7 @@ module.exports.login = async function (data) {
             console.log(passwordCheck)
             // resolve(passwordCheck)
             if (!passwordCheck) {
-                resolve(false)
+                resolve('unauthenticated')
             }
 
             // send Token and users

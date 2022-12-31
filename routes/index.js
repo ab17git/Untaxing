@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/registerUser', authController.registerUser)
 router.post('/login', authController.login)
+router.post('/verifyEmail', authController.verifyEmail)
+router.post('/verifyMobile', authController.verifyMobile)
 
 // router.post('/emailVerfication', authController.login)
 // router.post('/mobileVerfication', authController.login)
@@ -18,7 +20,6 @@ router.post('/login', authController.login)
 // router.post('/resetForgottenPassword', authController.login)
 
 router.get('/home', homeController.getHomePageData)
-
 router.get('/test', homeController.test)
 
 module.exports = router;

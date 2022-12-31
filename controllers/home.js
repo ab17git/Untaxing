@@ -1,8 +1,8 @@
 module.exports.getHomePageData = async (req, res) => {
     try {
         // var startDate = commonDate.getCurrentDateTime();
-        console.log(req.body)
-        res.send({'msg': 'In home controller'})
+        console.log(req.params)
+        res.send({'msg': 'In home controller', userId: req.params.user_id})
 
     } catch (e) {
         console.log(e);
